@@ -25,7 +25,7 @@ package main
 import (
 	"github.com/sirupsen/logrus"
 	"github.com/labstack/echo/v4"
-	"github.com/sandalwing/echo-logrusmiddleware"
+	"github.com/admiralobvious/echo-logrusmiddleware"
 )
 
 func main() {
