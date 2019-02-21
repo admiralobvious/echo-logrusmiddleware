@@ -4,12 +4,17 @@
 
 An adapter (middleware) to make the Golang [Echo web
 framework](https://github.com/labstack/echo) logging work with
-[logrus](https://github.com/Sirupsen/logrus), an excellent logging solution.
+[logrus](https://github.com/sirupsen/logrus), an excellent logging solution.
+
+Improves upon [sandalwing/echo-logrusmiddleware](https://github.com/sandalwing/echo-logrusmiddleware) by:
+1. Using the correct dependencies
+2. Including the request_id prop in the log output in order to support Echo's request ID middleware.
+3. Supporting Echo v4
 
 ## Install
 
 ```
-$ go get github.com/sandalwing/echo-logrusmiddleware
+$ go get github.com/admiralobvious/echo-logrusmiddleware
 ```
 
 ## Usage
