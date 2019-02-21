@@ -23,9 +23,9 @@ $ go get github.com/admiralobvious/echo-logrusmiddleware
 package main
 
 import (
-	"github.com/sirupsen/logrus"
-	"github.com/labstack/echo/v4"
 	"github.com/admiralobvious/echo-logrusmiddleware"
+	"github.com/labstack/echo/v4"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
