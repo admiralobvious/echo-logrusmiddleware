@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Sirupsen/logrus"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
+	"github.com/sirupsen/logrus"
 )
 
 type Logger struct {
@@ -31,16 +31,13 @@ func (l Logger) Level() log.Lvl {
 	return log.OFF
 }
 
-func (l Logger) SetPrefix(s string) {
-	// TODO
-}
+// SetHeader is a stub to satisfy the Logger interface
+// It's controlled by logrus
+func (l Logger) SetHeader(_ string) {}
 
-func (l Logger) Prefix() string {
-	// TODO.  Is this even valid?  I'm not sure it can be translated since
-	// logrus uses a Formatter interface.  Which seems to me to probably be
-	// a better way to do it.
-	return ""
-}
+func (l Logger) SetPrefix(_ string) {}
+
+func (l Logger) Prefix() string { return "" }
 
 func (l Logger) SetLevel(lvl log.Lvl) {
 	switch lvl {
@@ -126,6 +123,7 @@ func logrusMiddlewareHandler(c echo.Context, next echo.HandlerFunc) error {
 		"latency_human": stop.Sub(start).String(),
 		"bytes_in":      bytesIn,
 		"bytes_out":     strconv.FormatInt(res.Size, 10),
+		"request_id":    res.Header().Get(echo.HeaderXRequestID),
 	}).Info("Handled request")
 
 	return nil
