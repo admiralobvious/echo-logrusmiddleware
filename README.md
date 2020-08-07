@@ -14,7 +14,7 @@ Improves upon [sandalwing/echo-logrusmiddleware](https://github.com/sandalwing/e
 ## Install
 
 ```
-$ go get github.com/admiralobvious/echo-logrusmiddleware
+$ go get github.com/alexferl/echo-logrusmiddleware
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ $ go get github.com/admiralobvious/echo-logrusmiddleware
 package main
 
 import (
-	"github.com/admiralobvious/echo-logrusmiddleware"
+	"github.com/alexferl/echo-logrusmiddleware"
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
 )
